@@ -32,10 +32,14 @@ dependencies:
   flutter_signin_button: ^1.0.0
   firebase_core: ^0.5.3
   google_sign_in: ^4.5.9
+  carousel_slider: ^2.0.0
+  http: ^0.12.1
+  hexcolor: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  shared_preferences: any  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
