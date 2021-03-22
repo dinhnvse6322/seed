@@ -3,6 +3,7 @@ import 'dart:ui';
 // import 'package:book_project/models/DatabaseHelper.dart';
 // import 'package:book_project/screens/add_book_screen.dart';
 // import 'package:book_project/screens/search_screen.dart';
+import 'package:authentification/DetailPage.dart';
 import 'package:authentification/repositories/api.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
@@ -148,36 +149,36 @@ class ItemList extends StatelessWidget {
                         return new Container(
                           padding: const EdgeInsets.all(10.0),
                           child: new GestureDetector(
-                            // onTap: () => Navigator.of(context).push(
-                            //   new MaterialPageRoute(
-                            //       builder: (BuildContext context) =>
-                            //           new AlbumDetailsScreen(
-                            //             list: list,
-                            //             index: i,
-                            //           )),
-                            // ),
+                            onTap: () => Navigator.of(context).push(
+                              new MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      new DettailPage(
+                                        list: list,
+                                        index: i,
+                                      )),
+                            ),
                             child: InkWell(
                               child: Container(
                                 margin: EdgeInsets.only(bottom: 20),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
-                                    Hero(
-                                      tag: list[i]['id'],
-                                      child: Container(
-                                        width: 70,
-                                        height: 120,
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(7)),
-                                            image: DecorationImage(
-                                                image: NetworkImage(
-                                                    list[i]['url']),
-                                                fit: BoxFit.cover)),
-                                      ),
-                                    ),
+                                    // Hero(
+                                    //   tag: list[i]['id'],
+                                    //   child: Container(
+                                    //     width: 70,
+                                    //     height: 120,
+                                    //     decoration: BoxDecoration(
+                                    //         borderRadius: BorderRadius.all(
+                                    //             Radius.circular(7)),
+                                    //         image: DecorationImage(
+                                    //             image: NetworkImage(
+                                    //                 list[i]['url']),
+                                    //             fit: BoxFit.cover)),
+                                    //   ),
+                                    // ),
                                     SizedBox(
-                                      width: 20,
+                                      width: 30,
                                     ),
                                     Column(
                                       crossAxisAlignment:
@@ -187,10 +188,10 @@ class ItemList extends StatelessWidget {
                                           width: 260,
                                           padding: EdgeInsets.all(5),
                                           child: Text(
-                                            list[i]['title'],
+                                            '${list[i]['projectName']} ',
                                             style: TextStyle(
                                               color: Colors.orange,
-                                              fontSize: 20,
+                                              fontSize: 30,
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
@@ -199,12 +200,12 @@ class ItemList extends StatelessWidget {
                                           height: 5,
                                         ),
                                         Text(
-                                          list[i]['thumbnailUrl'],
+                                          '  Title: ${list[i]['titleProject']} ',
                                           style: TextStyle(
                                               fontFamily: 'montserrat',
-                                              color: Colors.black26,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w500),
+                                              color: Colors.black87,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w600),
                                         ),
                                         SizedBox(
                                           height: 10,
@@ -216,12 +217,12 @@ class ItemList extends StatelessWidget {
                                                 MainAxisAlignment.spaceBetween,
                                             children: <Widget>[
                                               Text(
-                                                '${list[i]['albumId']} ',
+                                                '  Capital ${list[i]['capital']} ',
                                                 style: TextStyle(
-                                                    color: Colors.black26,
-                                                    fontSize: 20,
+                                                    color: Colors.black54,
+                                                    fontSize: 16,
                                                     fontWeight:
-                                                        FontWeight.w900),
+                                                        FontWeight.w500),
                                               ),
                                             ],
                                           ),

@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class DatabaseHelper {
   String serverUrl = "https://jsonplaceholder.typicode.com/photos";
   String serverUrl2 =
-      "http://music-env.eba-9xc8in5w.ap-southeast-1.elasticbeanstalk.com";
+      "https://restfulapidemo20210321150752.azurewebsites.net/api/project";
   var status;
   var token;
   String accessToken;
@@ -18,11 +18,12 @@ class DatabaseHelper {
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    String myUrl = "$serverUrl";
+    String myUrl = "$serverUrl2";
     http.Response response = await http.get(myUrl, headers: {
       'Accept': 'application/json',
       'Authorization': 'Bearer $value'
     });
+    print("Respone =" + response.body);
     return json.decode(response.body);
   }
 
